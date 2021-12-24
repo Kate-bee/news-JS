@@ -1,3 +1,4 @@
+// @ts-nocheck
 class Loader {
     constructor(baseLink, options) {
         this.baseLink = baseLink;

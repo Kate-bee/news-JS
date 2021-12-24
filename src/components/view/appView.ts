@@ -1,3 +1,4 @@
+// @ts-nocheck
 import News from './news/news';
 import Sources from './sources/sources';
 

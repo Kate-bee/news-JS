@@ -1,3 +1,4 @@
+// @ts-nocheck
 import './sources.css';
 
 class Sources {
