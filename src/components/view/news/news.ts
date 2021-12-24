@@ -1,17 +1,18 @@
 
 import './news.css';
-import { ImageItem } from '../../../interfaces/image.inteface';
+import {NewsItem } from '../../../interfaces/news.item.inteface';
 
 class News {
-    draw(data: ImageItem[]) {
+    public  draw(data: NewsItem[]):void {
+
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
-debugger
+        debugger
         const fragment = document.createDocumentFragment();
         const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
         //const newsItemTemp: HTMLTemplateElement | null = document.querySelector('#newsItemTemp');
         if (newsItemTemp) {
-            news.forEach((item, idx) => {
-                const newsClone = newsItemTemp.content.cloneNode(true).parentElement as HTMLElement;
+            news.forEach((item:NewsItem, idx: number) => {
+                const newsClone = newsItemTemp.content.cloneNode(true) as HTMLElement;
                 if (newsClone) {
                     if (idx % 2) newsClone.querySelector('.news__item')?.classList.add('alt');
                     const newsPhoto = newsClone.querySelector('.news__meta-photo') as HTMLElement;

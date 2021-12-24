@@ -1,6 +1,6 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
-import { NewsItem } from '../../interfaces/news.interface';
+import { NewsPortal } from '../../interfaces/news.interface';
 
 class App {
     // TODO check e type
@@ -9,8 +9,8 @@ class App {
 
     public start(): void {
         document.querySelector('.sources')?.addEventListener('click',
-            (e) => this.controller.getNews(e, (data: NewsItem) => this.view.drawNews(data)));
-        this.controller.getSources((data: NewsItem) => this.view.drawSources(data));
+            (e) => this.controller.getNews(e, (data: NewsPortal) => this.view.drawNews(data)));
+        this.controller.getSources((data: NewsPortal) => this.view.drawSources(data));
     }
 }
 

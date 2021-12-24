@@ -1,8 +1,12 @@
-// @ts-nocheck
 import AppLoader from './appLoader';
+import { NewsPortal } from '../../interfaces/news.interface';
+
+type SourceFunction = (data: NewsPortal) => void;
+
+
 
 class AppController extends AppLoader {
-    getSources(callback) {
+    public getSources(callback: SourceFunction) {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -11,7 +15,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e, callback) {
+    public getNews(e: any, callback: any) {
         let target = e.target;
         const newsContainer = e.currentTarget;
 

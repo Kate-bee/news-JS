@@ -1,4 +1,4 @@
-export interface ImageItem {
+export interface NewsItem {
   urlToImage: string;
   author: string;
   source: { name: string };
@@ -6,4 +6,5 @@ export interface ImageItem {
   title: string;
   description: string;
   url: string;
+  name: string;
 }
