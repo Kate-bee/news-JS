@@ -1,20 +1,20 @@
-// @ts-nocheck
+
 import News from './news/news';
 import Sources from './sources/sources';
+import { NewsItem } from '../../interfaces/news.interface';
 
 export class AppView {
-    constructor() {
-        this.news = new News();
-        this.sources = new Sources();
-    }
 
-    drawNews(data) {
-        const values = data?.articles ? data?.articles : [];
+    private news: News = new News();
+    private sources: Sources = new Sources();
+
+
+    public drawNews(data: NewsItem): void {
+        const values = data?.articles || [];
         this.news.draw(values);
     }
-
-    drawSources(data) {
-        const values = data?.sources ? data?.sources : [];
+    public drawSources(data: NewsItem): void {
+        const values = data?.sources || [];
         this.sources.draw(values);
     }
 }
