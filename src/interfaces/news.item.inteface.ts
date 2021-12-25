@@ -7,4 +7,6 @@ export interface NewsItem {
   description: string;
   url: string;
   name: string;
+  id: string;
 }
+

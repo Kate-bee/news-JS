@@ -1,6 +1,6 @@
 
 import './sources.css';
-import { SourceItem } from '../../../interfaces/source.interface';
+import { SourceItem } from '../../../interfaces/source.type';
 
 class Sources {
 
